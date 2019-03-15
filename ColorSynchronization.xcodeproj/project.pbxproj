@@ -12,6 +12,18 @@
 		F7C76224223B60E600B01235 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C76222223B60E600B01235 /* Main.storyboard */; };
 		F7C76226223B60E900B01235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7C76225223B60E900B01235 /* Assets.xcassets */; };
 		F7C76229223B60E900B01235 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C76227223B60E900B01235 /* LaunchScreen.storyboard */; };
+		F7F016A4223B7FE6007B7DFC /* button_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7F0169C223B7FE6007B7DFC /* button_click.mp3 */; };
+		F7F016A5223B7FE6007B7DFC /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F0169E223B7FE6007B7DFC /* Music.m */; };
+		F7F016A6223B7FE6007B7DFC /* SystemLanguageClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F0169F223B7FE6007B7DFC /* SystemLanguageClass.swift */; };
+		F7F016A8223B7FE6007B7DFC /* merge.wav in Resources */ = {isa = PBXBuildFile; fileRef = F7F016A1223B7FE6007B7DFC /* merge.wav */; };
+		F7F016AF223B80EC007B7DFC /* EffectiveClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F016AE223B80EC007B7DFC /* EffectiveClass.swift */; };
+		F7F016BF223B86BB007B7DFC /* ModeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F016B6223B86BB007B7DFC /* ModeSelectorViewController.swift */; };
+		F7F016C0223B86BB007B7DFC /* ModeSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7F016B7223B86BB007B7DFC /* ModeSelectorViewController.xib */; };
+		F7F016C4223B8D7E007B7DFC /* BGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7F016C3223B8D7E007B7DFC /* BGM.mp3 */; };
+		F7F016CE223B9010007B7DFC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F016C8223B9010007B7DFC /* GameViewController.swift */; };
+		F7F016CF223B9010007B7DFC /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F016C9223B9010007B7DFC /* BlockView.swift */; };
+		F7F016D0223B9010007B7DFC /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7F016CA223B9010007B7DFC /* GameViewController.xib */; };
+		F7F016D1223B9010007B7DFC /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F016CC223B9010007B7DFC /* GameOverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +34,20 @@
 		F7C76225223B60E900B01235 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7C76228223B60E900B01235 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7C7622A223B60E900B01235 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7F0169A223B7FE6007B7DFC /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
+		F7F0169C223B7FE6007B7DFC /* button_click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button_click.mp3; sourceTree = "<group>"; };
+		F7F0169E223B7FE6007B7DFC /* Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Music.m; sourceTree = "<group>"; };
+		F7F0169F223B7FE6007B7DFC /* SystemLanguageClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemLanguageClass.swift; sourceTree = "<group>"; };
+		F7F016A1223B7FE6007B7DFC /* merge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = merge.wav; sourceTree = "<group>"; };
+		F7F016AA223B8059007B7DFC /* Objective-c-Swift-Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Objective-c-Swift-Bridge.h"; sourceTree = "<group>"; };
+		F7F016AE223B80EC007B7DFC /* EffectiveClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectiveClass.swift; sourceTree = "<group>"; };
+		F7F016B6223B86BB007B7DFC /* ModeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeSelectorViewController.swift; sourceTree = "<group>"; };
+		F7F016B8223B86BB007B7DFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ModeSelectorViewController.xib; sourceTree = "<group>"; };
+		F7F016C3223B8D7E007B7DFC /* BGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BGM.mp3; sourceTree = "<group>"; };
+		F7F016C8223B9010007B7DFC /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		F7F016C9223B9010007B7DFC /* BlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
+		F7F016CB223B9010007B7DFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GameViewController.xib; sourceTree = "<group>"; };
+		F7F016CC223B9010007B7DFC /* GameOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +80,52 @@
 		F7C7621D223B60E600B01235 /* ColorSynchronization */ = {
 			isa = PBXGroup;
 			children = (
-				F7C7621E223B60E600B01235 /* AppDelegate.swift */,
+				F7F016AA223B8059007B7DFC /* Objective-c-Swift-Bridge.h */,
+				F7F01699223B7FE6007B7DFC /* resource */,
+				F7F016B0223B86BB007B7DFC /* gameSelector */,
+				F7F016C5223B9010007B7DFC /* game */,
 				F7C76220223B60E600B01235 /* ViewController.swift */,
+				F7C7621E223B60E600B01235 /* AppDelegate.swift */,
 				F7C76222223B60E600B01235 /* Main.storyboard */,
 				F7C76225223B60E900B01235 /* Assets.xcassets */,
 				F7C76227223B60E900B01235 /* LaunchScreen.storyboard */,
 				F7C7622A223B60E900B01235 /* Info.plist */,
 			);
 			path = ColorSynchronization;
+			sourceTree = "<group>";
+		};
+		F7F01699223B7FE6007B7DFC /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				F7F0169A223B7FE6007B7DFC /* Music.h */,
+				F7F0169E223B7FE6007B7DFC /* Music.m */,
+				F7F0169C223B7FE6007B7DFC /* button_click.mp3 */,
+				F7F016C3223B8D7E007B7DFC /* BGM.mp3 */,
+				F7F016A1223B7FE6007B7DFC /* merge.wav */,
+				F7F0169F223B7FE6007B7DFC /* SystemLanguageClass.swift */,
+				F7F016AE223B80EC007B7DFC /* EffectiveClass.swift */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		F7F016B0223B86BB007B7DFC /* gameSelector */ = {
+			isa = PBXGroup;
+			children = (
+				F7F016B6223B86BB007B7DFC /* ModeSelectorViewController.swift */,
+				F7F016B7223B86BB007B7DFC /* ModeSelectorViewController.xib */,
+			);
+			path = gameSelector;
+			sourceTree = "<group>";
+		};
+		F7F016C5223B9010007B7DFC /* game */ = {
+			isa = PBXGroup;
+			children = (
+				F7F016C8223B9010007B7DFC /* GameViewController.swift */,
+				F7F016C9223B9010007B7DFC /* BlockView.swift */,
+				F7F016CA223B9010007B7DFC /* GameViewController.xib */,
+				F7F016CC223B9010007B7DFC /* GameOverView.swift */,
+			);
+			path = game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +170,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = F7C76212223B60E600B01235;
 			productRefGroup = F7C7621C223B60E600B01235 /* Products */;
@@ -123,7 +188,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C76229223B60E900B01235 /* LaunchScreen.storyboard in Resources */,
+				F7F016A8223B7FE6007B7DFC /* merge.wav in Resources */,
+				F7F016A4223B7FE6007B7DFC /* button_click.mp3 in Resources */,
+				F7F016C4223B8D7E007B7DFC /* BGM.mp3 in Resources */,
+				F7F016D0223B9010007B7DFC /* GameViewController.xib in Resources */,
 				F7C76226223B60E900B01235 /* Assets.xcassets in Resources */,
+				F7F016C0223B86BB007B7DFC /* ModeSelectorViewController.xib in Resources */,
 				F7C76224223B60E600B01235 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +205,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F016CE223B9010007B7DFC /* GameViewController.swift in Sources */,
+				F7F016BF223B86BB007B7DFC /* ModeSelectorViewController.swift in Sources */,
+				F7F016A5223B7FE6007B7DFC /* Music.m in Sources */,
 				F7C76221223B60E600B01235 /* ViewController.swift in Sources */,
 				F7C7621F223B60E600B01235 /* AppDelegate.swift in Sources */,
+				F7F016AF223B80EC007B7DFC /* EffectiveClass.swift in Sources */,
+				F7F016CF223B9010007B7DFC /* BlockView.swift in Sources */,
+				F7F016D1223B9010007B7DFC /* GameOverView.swift in Sources */,
+				F7F016A6223B7FE6007B7DFC /* SystemLanguageClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +234,22 @@
 				F7C76228223B60E900B01235 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F7F016B7223B86BB007B7DFC /* ModeSelectorViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7F016B8223B86BB007B7DFC /* Base */,
+			);
+			name = ModeSelectorViewController.xib;
+			sourceTree = "<group>";
+		};
+		F7F016CA223B9010007B7DFC /* GameViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7F016CB223B9010007B7DFC /* Base */,
+			);
+			name = GameViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -284,14 +377,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ColorSynchronization/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zmh.ColorSynchronization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ColorSynchronization/Objective-c-Swift-Bridge.h";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -301,14 +396,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ColorSynchronization/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zmh.ColorSynchronization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ColorSynchronization/Objective-c-Swift-Bridge.h";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
