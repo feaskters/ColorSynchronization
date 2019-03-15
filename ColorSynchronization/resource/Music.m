@@ -37,7 +37,7 @@ static Music *_instance;
     _instance.mergeEffectice = [[AVAudioPlayer alloc]initWithContentsOfURL:merge_url error:nil];
     _instance.mergeEffectice.volume = 0.5;
     _instance.mergeEffectice.enableRate = YES;
-    _instance.mergeEffectice.rate = 1.5;
+    _instance.mergeEffectice.rate = 1.8;
     
     //初始化BGM播放器
     NSString *BGM_path = [[NSBundle mainBundle]pathForResource:@"BGM" ofType:@"mp3"];

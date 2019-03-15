@@ -19,8 +19,10 @@ class BlockView: UIView {
 
     //更新图片状态
     func updateImage() {
-        EffectiveClass.rotateLeft(view: self)
-        self.background.image = UIImage.init(named: String(self.type))
+        EffectiveClass.reverse(view: self)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + TimeInterval(0.25)) {
+            self.background.image = UIImage.init(named: String(self.type))
+        }
     }
     
     //设置类型

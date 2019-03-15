@@ -56,8 +56,9 @@ class EffectiveClass: NSObject {
     
     //翻转效果
     class func reverse(view:UIView){
-        UIView.setAnimationTransition(UIView.AnimationTransition.curlUp, for: view, cache: true)
-        UIView.setAnimationDuration(0.5)
+        UIView.animate(withDuration: 0.5) {
+            view.layer.transform = CATransform3DRotate(view.layer.transform, CGFloat(Double.pi), 0, 1, 0   )
+        }
         
     }
 }
