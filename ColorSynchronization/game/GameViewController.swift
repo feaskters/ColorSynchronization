@@ -18,12 +18,21 @@ class GameViewController: UIViewController,GameOverProtocol {
     /*
      tag == 0 -> normal
      tag == 1 -> random
-     tag == 2 -> level
+     tag == 2 -> Easy
      */
     private var tag = 0;
     private var level = 1;
     private var blocksArray : Array<Array<BlockView>> = Array<Array<BlockView>>.init()
     private var blocksSynchronizated : Array<BlockView> = Array<BlockView>.init() //已被选中的方块
+    private var length = 13;
+    
+    lazy var lockView : UIImageView = {
+        let imageView = UIImageView.init(frame: CGRect.init(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 300, height: 300))
+        imageView.image = UIImage.init(named: "lock")
+        imageView.transform = CGAffineTransform.init(scaleX: 2, y: 2)
+        self.gameView.addSubview(imageView)
+        return imageView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +46,21 @@ class GameViewController: UIViewController,GameOverProtocol {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 1) {
+            self.lockView.frame = self.blocksSynchronizated[0].frame
+        }
+    }
+    
     //页面方块初始化
     func addBlocks() {
         let scSquare :CGFloat = 400
         let characterSquare : CGFloat = 30
         let space : CGFloat = (scSquare - characterSquare * 13) / 14
         
-        for i in 0...12 {
+        for i in 0...length - 1 {
             self.blocksArray.append([])
-            for j in 0...12{
+            for j in 0...length - 1{
                 let x = space + CGFloat(j) * (characterSquare + space)
                 let y = space + CGFloat(i) * (characterSquare + space)
                 let cv = BlockView.init(frame: CGRect.init(x: x, y: y, width: characterSquare, height: characterSquare))
@@ -63,18 +78,24 @@ class GameViewController: UIViewController,GameOverProtocol {
             self.tag0()
             break
         case 1:
+            self.tag1()
+            break
+        case 2:
+            self.tag2()
             break
         default:
             break
         }
+        self.synchronizeBlocksAround(block: self.blocksSynchronizated[0])
     }
     
     @IBAction func changeColor(_ sender: UIButton) {
         Music.shared().musicPlayMergeEffective()
         
-        //改变颜色
+        //改变颜色并进行同化
         for item in self.blocksSynchronizated{
             item.setType(type: sender.tag)
+            self.synchronizeBlocksAround(block: item)
         }
         
         for item in self.selectView.subviews{
@@ -85,8 +106,25 @@ class GameViewController: UIViewController,GameOverProtocol {
             for item in self.selectView.subviews{
                 (item as! UIButton).isEnabled = true
             }
+            //判断是否结束游戏
+            self.judgeEnd()
         }
         self.clickCount.text = String(Int(self.clickCount.text!)! + 1)
+    }
+    
+    //处理tag2
+    func tag2(){
+        let center = self.blocksArray.count/2
+        self.blocksArray[center][center].setFlag(flag: 1)
+        self.blocksSynchronizated.append(self.blocksArray[center][center])
+    }
+    
+    //处理tag1
+    func tag1(){
+        let x = Int(arc4random() % UInt32(self.blocksArray.count))
+        let y = Int(arc4random() % UInt32(self.blocksArray.count))
+        self.blocksArray[x][y].setFlag(flag: 1)
+        self.blocksSynchronizated.append(self.blocksArray[x][y])
     }
     
     //处理tag0
@@ -95,9 +133,43 @@ class GameViewController: UIViewController,GameOverProtocol {
         self.blocksSynchronizated.append(self.blocksArray[0][0])
     }
     
-    //处理tag1
-    func tag1() -> Int{
-        return Int(arc4random() % 2)
+    //同化周围的方块
+    func synchronizeBlocksAround(block:BlockView) {
+        let position = block.getPosition()
+        let x = position["x"]!
+        let y = position["y"]!
+        var flag = false //是否有可以同化的方块
+        //左边方块
+        if x > 0 && self.blocksArray[x - 1][y].getType() == block.getType() && self.blocksArray[x - 1][y].getFlag() == 0{
+            self.blocksArray[x - 1][y].setFlag(flag: 1)
+            self.blocksSynchronizated.append(self.blocksArray[x - 1][y])
+            self.synchronizeBlocksAround(block: self.blocksArray[x - 1][y])
+            flag = true
+        }
+        //右边方块
+        if x < length - 1 && self.blocksArray[x + 1][y].getType() == block.getType() && self.blocksArray[x + 1][y].getFlag() == 0{
+            self.blocksArray[x + 1][y].setFlag(flag: 1)
+            self.blocksSynchronizated.append(self.blocksArray[x + 1][y])
+            self.synchronizeBlocksAround(block: self.blocksArray[x + 1][y])
+            flag = true
+        }
+        //上边方块
+        if y > 0 && self.blocksArray[x][y - 1].getType() == block.getType() && self.blocksArray[x][y - 1].getFlag() == 0{
+            self.blocksArray[x][y - 1].setFlag(flag: 1)
+            self.blocksSynchronizated.append(self.blocksArray[x][y - 1])
+            self.synchronizeBlocksAround(block: self.blocksArray[x][y - 1])
+            flag = true
+        }
+        //下边方块
+        if y < length - 1 && self.blocksArray[x][y + 1].getType() == block.getType() && self.blocksArray[x][y + 1].getFlag() == 0{
+            self.blocksArray[x][y + 1].setFlag(flag: 1)
+            self.blocksSynchronizated.append(self.blocksArray[x][y + 1])
+            self.synchronizeBlocksAround(block: self.blocksArray[x][y + 1])
+            flag = true
+        }
+        if !flag {
+            return
+        }
     }
     
     @IBAction func back(_ sender: UIButton) {
@@ -123,19 +195,8 @@ class GameViewController: UIViewController,GameOverProtocol {
     
     //判断结束
     func judgeEnd() {
-        var flag = true //是否有无怪标致
-        for items in self.blocksArray{
-            for item in items{
-                if item.getType() == 0{
-                    flag = false
-                }
-            }
-        }
-        if flag {
+        if self.blocksSynchronizated.count == length * length {
             self.gameOver()
-            if self.tag == 2{
-                
-            }
         }
     }
     

@@ -16,7 +16,7 @@ class ModeSelectorViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         //初始不可见
-        self.containerView.alpha = 0
+        self.containerView.alpha = 0.1
         
     }
     
@@ -31,8 +31,8 @@ class ModeSelectorViewController: UIViewController {
         Music.shared().musicPlayEffective()
        //退出动画
         UIView.animate(withDuration: 1, animations: {
-            self.containerView.alpha = 0
-            self.containerView.transform = CGAffineTransform.init(rotationAngle: 2.5)
+            self.containerView.alpha = 0.01
+            self.containerView.transform = CGAffineTransform.init(rotationAngle: 2.4)
         }) { (Bool) in
             
             self.dismiss(animated: false, completion: nil)
@@ -42,7 +42,7 @@ class ModeSelectorViewController: UIViewController {
     /*页面跳转
      sender.tag == 0 -> normal
      sender.tag == 1 -> Random
-     sender.tag == 2 -> Rank
+     sender.tag == 2 -> Easy
      */
     @IBAction func selectMode(_ sender: UIButton) {
         //播放音效
@@ -50,33 +50,14 @@ class ModeSelectorViewController: UIViewController {
         //退出动画
         UIView.animate(withDuration: 1, animations: {
             self.containerView.alpha = 0
-            self.containerView.transform = CGAffineTransform.init(scaleX: 2, y: 2)
+            self.containerView.transform = CGAffineTransform.init(scaleX: 2.1, y: 2.1)
         }) { (Bool) in
             self.containerView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
-            switch sender.tag {
-            case 0:
-                let gvc = GameViewController.init(nibName: nil, bundle: nil)
-                gvc.setTag(tag: 0)
-                self.present(gvc, animated: false, completion: {
-                    self.reloadInputViews()
-                })
-                break
-            case 1:
-                let gvc = GameViewController.init(nibName: nil, bundle: nil)
-                gvc.setTag(tag: 1)
-                self.present(gvc, animated: false, completion: {
+            let gvc = GameViewController.init(nibName: nil, bundle: nil)
+            gvc.setTag(tag: sender.tag)
+            self.present(gvc, animated: false, completion: {
                 self.reloadInputViews()
             })
-                break
-            case 2:
-//                let vc = LevelSelectorViewController.init(nibName: nil, bundle: nil)
-//                self.present(vc, animated: false, completion: {
-//                    self.reloadInputViews()
-//                })
-                break
-            default:
-                break
-            }
         }
         
     }

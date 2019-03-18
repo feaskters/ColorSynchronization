@@ -37,9 +37,9 @@ class ViewController: UIViewController {
         tip.numberOfLines = 0
         tip.font = UIFont.init(name: "Marker Felt", size: 18)
         if SystemLanguageClass.getCurrentLanguage() == "cn"{
-            tip.text = "玩法介绍: \n\t 点击一个区块来净化它和它周围的怪物。这些在方块周围可爱的动物也可以变成怪物。净化所有怪物赢得胜利。"
+            tip.text = "玩法介绍: \n\t 点击一个颜色方块来改变选中方块的颜色。当所有方块都被同化成一种颜色时，获得胜利！"
         }else{
-            tip.text = "How to play: \n\t Click a block to purify monsters around it.Be careful,these cute animals also can be changed to monsters around the block.Purify all monsters to win."
+            tip.text = "How to play: \n\t Click a color block to change the color of selected blocks.When all blocks are synchronized to same color, you win!"
         }
         tip.textColor = #colorLiteral(red: 0.4470588235, green: 0.2705882353, blue: 0.09019607843, alpha: 1)
         view.addSubview(tip)
