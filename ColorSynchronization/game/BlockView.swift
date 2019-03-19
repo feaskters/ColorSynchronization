@@ -13,7 +13,7 @@ class BlockView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.background.frame = CGRect.init(x: 0, y: 0, width: 30, height: 30)
+        self.background.frame = CGRect.init(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         self.addSubview(background)
     }
 

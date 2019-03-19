@@ -38,30 +38,56 @@ class GameViewController: UIViewController,GameOverProtocol {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        addBlocks()
+        
+
         
         //开始计时
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
             self.timeCount.text = String(Int(self.timeCount.text!)! + 1)
         }
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        //适配ipad
+        if UIScreen.main.bounds.width < 400 {
+            //gameview适配
+            self.gameView.frame = CGRect.init(x: self.gameView.frame.origin.x + 30, y: self.gameView.frame.width, width: 370, height: 370)
+            //selectview适配
+            for item in self.containerView.constraints{
+                if item.identifier == "selectY"{
+                    item.constant = -20
+                }
+            }
+            
+            for item in self.selectView.subviews{
+                for contrain in item.constraints{
+                    contrain.constant -= 20
+                }
+            }
+        }
+        addBlocks()
+        
         UIView.animate(withDuration: 1) {
             self.lockView.frame = self.blocksSynchronizated[0].frame
         }
+
     }
     
     //页面方块初始化
     func addBlocks() {
-        let scSquare :CGFloat = 400
-        let characterSquare : CGFloat = 30
+        let scSquare :CGFloat = UIScreen.main.bounds.width < 400 ? 370 : 400
+        let characterSquare : CGFloat = UIScreen.main.bounds.width < 400 ? 27 : 30
         let space : CGFloat = (scSquare - characterSquare * 13) / 14
-        
         for i in 0...length - 1 {
             self.blocksArray.append([])
             for j in 0...length - 1{
-                let x = space + CGFloat(j) * (characterSquare + space)
+                var x = space + CGFloat(j) * (characterSquare + space)
+                if UIScreen.main.bounds.width < 400 {
+                    x += 15
+                }
                 let y = space + CGFloat(i) * (characterSquare + space)
                 let cv = BlockView.init(frame: CGRect.init(x: x, y: y, width: characterSquare, height: characterSquare))
                 //获取type
