@@ -24,6 +24,7 @@
 		F7F016CF223B9010007B7DFC /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F016C9223B9010007B7DFC /* BlockView.swift */; };
 		F7F016D0223B9010007B7DFC /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7F016CA223B9010007B7DFC /* GameViewController.xib */; };
 		F7F016D1223B9010007B7DFC /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F016CC223B9010007B7DFC /* GameOverView.swift */; };
+		F7FA84FD2243489C00CB11B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7FA84FF2243489C00CB11B3 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		F7FA84F52243405000CB11B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		F7FA84F72243406600CB11B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/GameViewController.strings"; sourceTree = "<group>"; };
 		F7FA84F92243407500CB11B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ModeSelectorViewController.strings"; sourceTree = "<group>"; };
+		F7FA84FE2243489C00CB11B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F7FA85002243489F00CB11B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,7 @@
 				F7C76225223B60E900B01235 /* Assets.xcassets */,
 				F7C76227223B60E900B01235 /* LaunchScreen.storyboard */,
 				F7C7622A223B60E900B01235 /* Info.plist */,
+				F7FA84FF2243489C00CB11B3 /* InfoPlist.strings */,
 			);
 			path = ColorSynchronization;
 			sourceTree = "<group>";
@@ -197,6 +201,7 @@
 				F7F016D0223B9010007B7DFC /* GameViewController.xib in Resources */,
 				F7C76226223B60E900B01235 /* Assets.xcassets in Resources */,
 				F7F016C0223B86BB007B7DFC /* ModeSelectorViewController.xib in Resources */,
+				F7FA84FD2243489C00CB11B3 /* InfoPlist.strings in Resources */,
 				F7C76224223B60E600B01235 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +261,15 @@
 				F7FA84F72243406600CB11B3 /* zh-Hans */,
 			);
 			name = GameViewController.xib;
+			sourceTree = "<group>";
+		};
+		F7FA84FF2243489C00CB11B3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7FA84FE2243489C00CB11B3 /* en */,
+				F7FA85002243489F00CB11B3 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
