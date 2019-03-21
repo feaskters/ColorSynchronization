@@ -48,6 +48,9 @@
 		F7F016C9223B9010007B7DFC /* BlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
 		F7F016CB223B9010007B7DFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GameViewController.xib; sourceTree = "<group>"; };
 		F7F016CC223B9010007B7DFC /* GameOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		F7FA84F52243405000CB11B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		F7FA84F72243406600CB11B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/GameViewController.strings"; sourceTree = "<group>"; };
+		F7FA84F92243407500CB11B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ModeSelectorViewController.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +227,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F7C76223223B60E600B01235 /* Base */,
+				F7FA84F52243405000CB11B3 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -240,6 +244,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F7F016B8223B86BB007B7DFC /* Base */,
+				F7FA84F92243407500CB11B3 /* zh-Hans */,
 			);
 			name = ModeSelectorViewController.xib;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F7F016CB223B9010007B7DFC /* Base */,
+				F7FA84F72243406600CB11B3 /* zh-Hans */,
 			);
 			name = GameViewController.xib;
 			sourceTree = "<group>";

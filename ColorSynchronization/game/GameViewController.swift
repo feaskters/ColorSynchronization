@@ -25,6 +25,7 @@ class GameViewController: UIViewController,GameOverProtocol {
     private var blocksArray : Array<Array<BlockView>> = Array<Array<BlockView>>.init()
     private var blocksSynchronizated : Array<BlockView> = Array<BlockView>.init() //已被选中的方块
     private var length = 13;
+    private var autotimer : Timer?
     
     lazy var lockView : UIImageView = {
         let imageView = UIImageView.init(frame: CGRect.init(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 300, height: 300))
@@ -42,7 +43,7 @@ class GameViewController: UIViewController,GameOverProtocol {
 
         
         //开始计时
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
+        self.autotimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
             self.timeCount.text = String(Int(self.timeCount.text!)! + 1)
         }
         
@@ -223,6 +224,7 @@ class GameViewController: UIViewController,GameOverProtocol {
     func judgeEnd() {
         if self.blocksSynchronizated.count == length * length {
             self.gameOver()
+            self.autotimer?.invalidate()
         }
     }
     
